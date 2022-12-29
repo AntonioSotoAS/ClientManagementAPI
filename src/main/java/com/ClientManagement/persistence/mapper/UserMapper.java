@@ -14,10 +14,10 @@ import java.util.List;
 public interface UserMapper {
 
     @Mappings({
-            @Mapping(source = "idUser",target = "idUser"),
-            @Mapping(source = "role",target = "role"),
-            @Mapping(source = "username",target = "username"),
-            @Mapping(source = "password" ,target = "password")
+            @Mapping(source = "idUser",target = "idUserDTO"),
+            @Mapping(source = "role",target = "roleDTO"),
+            @Mapping(source = "username",target = "usernameDTO"),
+            @Mapping(source = "password" ,target = "passwordDTO")
 
     })
     UserDTO toUserDTO(User user);

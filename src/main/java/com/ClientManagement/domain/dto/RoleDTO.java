@@ -2,34 +2,34 @@ package com.ClientManagement.domain.dto;
 
 public class RoleDTO {
 
-    private int idRole;
-    private String roleType;
+    private int idRoleDTO;
+    private String roleTypeDTO;
 
-    public RoleDTO(String roleType) {
-        this.roleType = roleType;
+    public RoleDTO(String roleTypeDTO) {
+        this.roleTypeDTO = roleTypeDTO;
     }
 
-    public int getIdRole() {
-        return idRole;
+    public int getIdRoleDTO() {
+        return idRoleDTO;
     }
 
-    public void setIdRole(int idRole) {
-        this.idRole = idRole;
+    public void setIdRoleDTO(int idRoleDTO) {
+        this.idRoleDTO = idRoleDTO;
     }
 
-    public String getRoleType() {
-        return roleType;
+    public String getRoleTypeDTO() {
+        return roleTypeDTO;
     }
 
-    public void setRoleType(String roleType) {
-        this.roleType = roleType;
+    public void setRoleTypeDTO(String roleTypeDTO) {
+        this.roleTypeDTO = roleTypeDTO;
     }
 
     @Override
     public String toString() {
         return "RoleDTO{" +
-                "idRole=" + idRole +
-                ", roleType='" + roleType + '\'' +
+                "idRoleDTO=" + idRoleDTO +
+                ", roleTypeDTO='" + roleTypeDTO + '\'' +
                 '}';
     }
 }

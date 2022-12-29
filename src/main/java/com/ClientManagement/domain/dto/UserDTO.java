@@ -4,56 +4,56 @@ import com.ClientManagement.domain.Role;
 
 public class UserDTO {
 
-    private int idUser;
-    private Role role;
-    private String username;
-    private String password;
+    private int idUserDTO;
+    private Role roleDTO;
+    private String usernameDTO;
+    private String passwordDTO;
 
-    public UserDTO(Role role, String username, String password) {
-        this.role = role;
-        this.username = username;
-        this.password = password;
+    public UserDTO(Role roleDTO, String usernameDTO, String passwordDTO) {
+        this.roleDTO = roleDTO;
+        this.usernameDTO = usernameDTO;
+        this.passwordDTO = passwordDTO;
     }
 
-    public int getIdUser() {
-        return idUser;
+    public int getIdUserDTO() {
+        return idUserDTO;
     }
 
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
+    public void setIdUserDTO(int idUserDTO) {
+        this.idUserDTO = idUserDTO;
     }
 
-    public Role getRole() {
-        return role;
+    public Role getRoleDTO() {
+        return roleDTO;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setRoleDTO(Role roleDTO) {
+        this.roleDTO = roleDTO;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUsernameDTO() {
+        return usernameDTO;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUsernameDTO(String usernameDTO) {
+        this.usernameDTO = usernameDTO;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPasswordDTO() {
+        return passwordDTO;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPasswordDTO(String passwordDTO) {
+        this.passwordDTO = passwordDTO;
     }
 
     @Override
     public String toString() {
         return "UserDTO{" +
-                "idUser=" + idUser +
-                ", role=" + role +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
+                "idUserDTO=" + idUserDTO +
+                ", roleDTO=" + roleDTO +
+                ", usernameDTO='" + usernameDTO + '\'' +
+                ", passwordDTO='" + passwordDTO + '\'' +
                 '}';
     }
 }

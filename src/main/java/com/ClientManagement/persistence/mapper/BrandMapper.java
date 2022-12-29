@@ -15,8 +15,8 @@ import java.util.List;
 public interface BrandMapper {
 
     @Mappings({
-            @Mapping(source = "idbrand",target = "idbrand"),
-            @Mapping(source = "brand",target = "brand")
+            @Mapping(source = "idBrand",target = "idBrandDTO"),
+            @Mapping(source = "brand",target = "brandDTO")
     })
     BrandDTO toBrandDTO(Brand brand);
 

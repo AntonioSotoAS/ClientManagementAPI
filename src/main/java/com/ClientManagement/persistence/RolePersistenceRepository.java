@@ -46,9 +46,9 @@ public class RolePersistenceRepository implements RoleRepository {
 
     @Override
     public RoleDTO update(RoleDTO role) {
-        return getRole(role.getIdRole())
+        return getRole(role.getIdRoleDTO())
                 .map(roletoUpdate -> {
-                    roletoUpdate.setRoleType(role.getRoleType());
+                    roletoUpdate.setRoleTypeDTO(role.getRoleTypeDTO());
                     Role roleEntity = mapper.toRole(roletoUpdate);
                     return save(mapper.toRoleDTO(roleEntity));
                 }).orElse(null);

@@ -27,7 +27,7 @@ public class BrandPersistenceRepository implements BrandRepository {
 
     @Override
     public Optional<List<BrandDTO>> getByBrand(int brandId) {
-        return brandCrudRepository.findAllByIdbrand(brandId)
+        return brandCrudRepository.findByIdBrand(brandId)
                 .map(brands -> mapper.toBrandDTOs(brands));
     }
 
@@ -45,9 +45,9 @@ public class BrandPersistenceRepository implements BrandRepository {
 
     @Override
     public BrandDTO update(BrandDTO brand) {
-        return getBrand(brand.getIdBrand())
+        return getBrand(brand.getIdBrandDTO())
                 .map(brandtoUpdate -> {
-                    brandtoUpdate.setBrand(brand.getBrand());
+                    brandtoUpdate.setBrandDTO(brand.getBrandDTO());
                     Brand branEntity = mapper.toBrand(brandtoUpdate);
                     return save(mapper.toBrandDTO(branEntity));
                 }).orElse(null);

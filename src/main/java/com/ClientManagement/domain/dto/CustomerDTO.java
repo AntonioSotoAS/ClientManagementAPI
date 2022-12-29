@@ -6,111 +6,111 @@ import java.util.Arrays;
 
 public class CustomerDTO {
 
-    private int idCustomer;
-    private Brand brand;
-    private int dni;
-    private String name;
-    private String lastName;
-    private int age;
-    private String phone;
-    private String email;
-    private byte[] photo;
+    private int idCustomerDTO;
+    private Brand brandDTO;
+    private int dniDTO;
+    private String nameDTO;
+    private String lastNameDTO;
+    private int ageDTO;
+    private String phoneDTO;
+    private String emailDTO;
+    private byte[] photoDTO;
 
-    public CustomerDTO(Brand brand, int dni, String name, String lastName, int age, String phone, String email, byte[] photo) {
-        this.brand = brand;
-        this.dni = dni;
-        this.name = name;
-        this.lastName = lastName;
-        this.age = age;
-        this.phone = phone;
-        this.email = email;
-        this.photo = photo;
+    public CustomerDTO(Brand brandDTO, int dniDTO, String nameDTO, String lastNameDTO, int ageDTO, String phoneDTO, String emailDTO, byte[] photoDTO) {
+        this.brandDTO = brandDTO;
+        this.dniDTO = dniDTO;
+        this.nameDTO = nameDTO;
+        this.lastNameDTO = lastNameDTO;
+        this.ageDTO = ageDTO;
+        this.phoneDTO = phoneDTO;
+        this.emailDTO = emailDTO;
+        this.photoDTO = photoDTO;
     }
 
-    public int getIdCustomer() {
-        return idCustomer;
+    public int getIdCustomerDTO() {
+        return idCustomerDTO;
     }
 
-    public void setIdCustomer(int idCustomer) {
-        this.idCustomer = idCustomer;
+    public void setIdCustomerDTO(int idCustomerDTO) {
+        this.idCustomerDTO = idCustomerDTO;
     }
 
-    public Brand getBrand() {
-        return brand;
+    public Brand getBrandDTO() {
+        return brandDTO;
     }
 
-    public void setBrand(Brand brand) {
-        this.brand = brand;
+    public void setBrandDTO(Brand brandDTO) {
+        this.brandDTO = brandDTO;
     }
 
-    public int getDni() {
-        return dni;
+    public int getDniDTO() {
+        return dniDTO;
     }
 
-    public void setDni(int dni) {
-        this.dni = dni;
+    public void setDniDTO(int dniDTO) {
+        this.dniDTO = dniDTO;
     }
 
-    public String getName() {
-        return name;
+    public String getNameDTO() {
+        return nameDTO;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNameDTO(String nameDTO) {
+        this.nameDTO = nameDTO;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLastNameDTO() {
+        return lastNameDTO;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastNameDTO(String lastNameDTO) {
+        this.lastNameDTO = lastNameDTO;
     }
 
-    public int getAge() {
-        return age;
+    public int getAgeDTO() {
+        return ageDTO;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setAgeDTO(int ageDTO) {
+        this.ageDTO = ageDTO;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getPhoneDTO() {
+        return phoneDTO;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setPhoneDTO(String phoneDTO) {
+        this.phoneDTO = phoneDTO;
     }
 
-    public String getEmail() {
-        return email;
+    public String getEmailDTO() {
+        return emailDTO;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmailDTO(String emailDTO) {
+        this.emailDTO = emailDTO;
     }
 
-    public byte[] getPhoto() {
-        return photo;
+    public byte[] getPhotoDTO() {
+        return photoDTO;
     }
 
-    public void setPhoto(byte[] photo) {
-        this.photo = photo;
+    public void setPhotoDTO(byte[] photoDTO) {
+        this.photoDTO = photoDTO;
     }
 
     @Override
     public String toString() {
         return "CustomerDTO{" +
-                "idCustomer=" + idCustomer +
-                ", brand=" + brand +
-                ", dni=" + dni +
-                ", name='" + name + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", age=" + age +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                ", photo=" + Arrays.toString(photo) +
+                "idCustomerDTO=" + idCustomerDTO +
+                ", brandDTO=" + brandDTO +
+                ", dniDTO=" + dniDTO +
+                ", nameDTO='" + nameDTO + '\'' +
+                ", lastNameDTO='" + lastNameDTO + '\'' +
+                ", ageDTO=" + ageDTO +
+                ", phoneDTO='" + phoneDTO + '\'' +
+                ", emailDTO='" + emailDTO + '\'' +
+                ", photoDTO=" + Arrays.toString(photoDTO) +
                 '}';
     }
 }

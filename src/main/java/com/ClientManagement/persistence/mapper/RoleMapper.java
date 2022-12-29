@@ -16,8 +16,8 @@ import java.util.List;
 public interface RoleMapper {
 
     @Mappings({
-            @Mapping(source = "idRole",target = "idRole"),
-            @Mapping(source = "roleType",target = "roleType")
+            @Mapping(source = "idRole",target = "idRoleDTO"),
+            @Mapping(source = "roleType",target = "roleTypeDTO")
     })
     RoleDTO toRoleDTO(Role role);
 

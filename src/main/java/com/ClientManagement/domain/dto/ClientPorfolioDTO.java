@@ -4,34 +4,34 @@ import com.ClientManagement.domain.Customer;
 
 public class ClientPorfolioDTO {
 
-    private int idClientPorfolio;
-    private Customer customer;
+    private int idClientPorfolioDTO;
+    private Customer customerDTO;
 
-    public ClientPorfolioDTO(Customer customer) {
-        this.customer = customer;
+    public ClientPorfolioDTO(Customer customerDTO) {
+        this.customerDTO = customerDTO;
     }
 
-    public int getIdClientPorfolio() {
-        return idClientPorfolio;
+    public int getIdClientPorfolioDTO() {
+        return idClientPorfolioDTO;
     }
 
-    public void setIdClientPorfolio(int idClientPorfolio) {
-        this.idClientPorfolio = idClientPorfolio;
+    public void setIdClientPorfolioDTO(int idClientPorfolioDTO) {
+        this.idClientPorfolioDTO = idClientPorfolioDTO;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public Customer getCustomerDTO() {
+        return customerDTO;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setCustomerDTO(Customer customerDTO) {
+        this.customerDTO = customerDTO;
     }
 
     @Override
     public String toString() {
         return "ClientPorfolioDTO{" +
-                "idClientPorfolio=" + idClientPorfolio +
-                ", customer=" + customer +
+                "idClientPorfolioDTO=" + idClientPorfolioDTO +
+                ", customerDTO=" + customerDTO +
                 '}';
     }
 }

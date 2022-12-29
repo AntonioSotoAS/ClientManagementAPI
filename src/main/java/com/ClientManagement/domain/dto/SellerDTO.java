@@ -6,79 +6,79 @@ import java.util.Arrays;
 
 public class SellerDTO {
 
-    private int idSeller;
-    private ClientPorfolio clientPorfolio;
+    private int idSellerDTO;
+    private ClientPorfolio clientPorfolioDTO;
 
-    private int dni;
-    private String name;
-    private String lastName;
-    private byte[] photo;
+    private int dniDTO;
+    private String nameDTO;
+    private String lastNameDTO;
+    private byte[] photoDTO;
 
-    public SellerDTO(ClientPorfolio clientPorfolio, int dni, String name, String lastName, byte[] photo) {
-        this.clientPorfolio = clientPorfolio;
-        this.dni = dni;
-        this.name = name;
-        this.lastName = lastName;
-        this.photo = photo;
+    public SellerDTO(ClientPorfolio clientPorfolioDTO, int dniDTO, String nameDTO, String lastNameDTO, byte[] photoDTO) {
+        this.clientPorfolioDTO = clientPorfolioDTO;
+        this.dniDTO = dniDTO;
+        this.nameDTO = nameDTO;
+        this.lastNameDTO = lastNameDTO;
+        this.photoDTO = photoDTO;
     }
 
-    public int getIdSeller() {
-        return idSeller;
+    public int getIdSellerDTO() {
+        return idSellerDTO;
     }
 
-    public void setIdSeller(int idSeller) {
-        this.idSeller = idSeller;
+    public void setIdSellerDTO(int idSellerDTO) {
+        this.idSellerDTO = idSellerDTO;
     }
 
-    public ClientPorfolio getClientPorfolio() {
-        return clientPorfolio;
+    public ClientPorfolio getClientPorfolioDTO() {
+        return clientPorfolioDTO;
     }
 
-    public void setClientPorfolio(ClientPorfolio clientPorfolio) {
-        this.clientPorfolio = clientPorfolio;
+    public void setClientPorfolioDTO(ClientPorfolio clientPorfolioDTO) {
+        this.clientPorfolioDTO = clientPorfolioDTO;
     }
 
-    public int getDni() {
-        return dni;
+    public int getDniDTO() {
+        return dniDTO;
     }
 
-    public void setDni(int dni) {
-        this.dni = dni;
+    public void setDniDTO(int dniDTO) {
+        this.dniDTO = dniDTO;
     }
 
-    public String getName() {
-        return name;
+    public String getNameDTO() {
+        return nameDTO;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNameDTO(String nameDTO) {
+        this.nameDTO = nameDTO;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLastNameDTO() {
+        return lastNameDTO;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastNameDTO(String lastNameDTO) {
+        this.lastNameDTO = lastNameDTO;
     }
 
-    public byte[] getPhoto() {
-        return photo;
+    public byte[] getPhotoDTO() {
+        return photoDTO;
     }
 
-    public void setPhoto(byte[] photo) {
-        this.photo = photo;
+    public void setPhotoDTO(byte[] photoDTO) {
+        this.photoDTO = photoDTO;
     }
 
     @Override
     public String toString() {
         return "SellerDTO{" +
-                "idSeller=" + idSeller +
-                ", clientPorfolio=" + clientPorfolio +
-                ", dni=" + dni +
-                ", name='" + name + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", photo=" + Arrays.toString(photo) +
+                "idSellerDTO=" + idSellerDTO +
+                ", clientPorfolioDTO=" + clientPorfolioDTO +
+                ", dniDTO=" + dniDTO +
+                ", nameDTO='" + nameDTO + '\'' +
+                ", lastNameDTO='" + lastNameDTO + '\'' +
+                ", photoDTO=" + Arrays.toString(photoDTO) +
                 '}';
     }
 }

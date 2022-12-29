@@ -9,6 +9,6 @@ import java.util.Optional;
 
 public interface BrandCrudRepository  extends CrudRepository<Brand,Integer> {
 
-    Optional<List<Brand>> findAllByIdbrand(int idBrand);
+    Optional<List<Brand>> findByIdBrand(int idBrand);
 
 }

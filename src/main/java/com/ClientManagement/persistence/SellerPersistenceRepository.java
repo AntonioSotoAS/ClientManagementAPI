@@ -46,13 +46,13 @@ public class SellerPersistenceRepository implements SellerRepository {
 
     @Override
     public SellerDTO update(SellerDTO seller) {
-        return getSeller(seller.getIdSeller())
+        return getSeller(seller.getIdSellerDTO())
                 .map(sellertoUpdate -> {
-                    seller.setClientPorfolio(seller.getClientPorfolio());
-                    seller.setDni(seller.getDni());
-                    seller.setName(seller.getName());
-                    seller.setLastName(seller.getLastName());
-                    seller.setPhoto(seller.getPhoto());
+                    seller.setClientPorfolioDTO(seller.getClientPorfolioDTO());
+                    seller.setDniDTO(seller.getDniDTO());
+                    seller.setNameDTO(seller.getNameDTO());
+                    seller.setLastNameDTO(seller.getLastNameDTO());
+                    seller.setPhotoDTO(seller.getPhotoDTO());
                     Seller sellerEntity = mapper.toSeller(sellertoUpdate);
                     return save(mapper.toSellerDTO(sellerEntity));
                 } ).orElse(null);

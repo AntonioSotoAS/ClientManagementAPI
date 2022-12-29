@@ -45,11 +45,11 @@ public class UserPersistenceRepository implements UserRepository {
 
     @Override
     public UserDTO update(UserDTO user) {
-        return getUser(user.getIdUser())
+        return getUser(user.getIdUserDTO())
                 .map(usertoUpdate -> {
-                    usertoUpdate.setRole(user.getRole());
-                    usertoUpdate.setUsername(user.getUsername());
-                    usertoUpdate.setPassword(user.getPassword());
+                    usertoUpdate.setRoleDTO(user.getRoleDTO());
+                    usertoUpdate.setUsernameDTO(user.getUsernameDTO());
+                    usertoUpdate.setPasswordDTO(user.getPasswordDTO());
                     User userEntity = mapper.toUser(usertoUpdate);
                     return save(mapper.toUserDTO(userEntity));
                 }).orElse(null);

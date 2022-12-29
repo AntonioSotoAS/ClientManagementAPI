@@ -16,12 +16,12 @@ import java.util.List;
 public interface SellerMapper {
 
     @Mappings({
-            @Mapping(source = "idSeller",target = "idSeller"),
-            @Mapping(source = "clientPorfolio",target = "clientPorfolio"),
-            @Mapping(source = "dni",target = "dni"),
-            @Mapping(source = "name" ,target = "name"),
-            @Mapping(source = "lastName" ,target = "lastName"),
-            @Mapping(source = "photo" ,target = "photo")
+            @Mapping(source = "idSeller",target = "idSellerDTO"),
+            @Mapping(source = "clientPorfolio",target = "clientPorfolioDTO"),
+            @Mapping(source = "dni",target = "dniDTO"),
+            @Mapping(source = "name" ,target = "nameDTO"),
+            @Mapping(source = "lastName" ,target = "lastNameDTO"),
+            @Mapping(source = "photo" ,target = "photoDTO")
     })
     SellerDTO toSellerDTO(Seller seller);
 

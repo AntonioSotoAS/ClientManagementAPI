@@ -14,14 +14,14 @@ import java.util.List;
 public interface CustomerMapper {
 
     @Mappings({
-            @Mapping(source = "idCustomer",target = "idCustomer"),
-            @Mapping(source = "brand",target = "brand"),
-            @Mapping(source = "dni",target = "dni"),
-            @Mapping(source = "name",target = "name"),
-            @Mapping(source = "lastName",target = "lastName"),
-            @Mapping(source = "phone",target = "phone"),
-            @Mapping(source = "email",target = "email"),
-            @Mapping(source = "photo",target = "photo")
+            @Mapping(source = "idCustomer",target = "idCustomerDTO"),
+            @Mapping(source = "brand",target = "brandDTO"),
+            @Mapping(source = "dni",target = "dniDTO"),
+            @Mapping(source = "name",target = "nameDTO"),
+            @Mapping(source = "lastName",target = "lastNameDTO"),
+            @Mapping(source = "phone",target = "phoneDTO"),
+            @Mapping(source = "email",target = "emailDTO"),
+            @Mapping(source = "photo",target = "photoDTO")
     })
     CustomerDTO toCustomerDTO(Customer customer);
 

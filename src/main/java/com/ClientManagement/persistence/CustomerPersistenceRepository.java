@@ -46,15 +46,15 @@ public class CustomerPersistenceRepository implements CustomerRepository {
 
     @Override
     public CustomerDTO update(CustomerDTO customer) {
-        return getCustomer(customer.getIdCustomer())
+        return getCustomer(customer.getIdCustomerDTO())
                 .map(customertoUpdate -> {
-                    customertoUpdate.setBrand(customer.getBrand());
-                    customertoUpdate.setDni(customer.getDni());
-                    customertoUpdate.setName(customer.getName());
-                    customertoUpdate.setLastName(customer.getLastName());
-                    customertoUpdate.setPhone(customer.getPhone());
-                    customertoUpdate.setEmail(customer.getEmail());
-                    customertoUpdate.setPhone(customer.getPhone());
+                    customertoUpdate.setBrandDTO(customer.getBrandDTO());
+                    customertoUpdate.setDniDTO(customer.getDniDTO());
+                    customertoUpdate.setNameDTO(customer.getNameDTO());
+                    customertoUpdate.setLastNameDTO(customer.getLastNameDTO());
+                    customertoUpdate.setPhoneDTO(customer.getPhoneDTO());
+                    customertoUpdate.setEmailDTO(customer.getEmailDTO());
+                    customertoUpdate.setPhoneDTO(customer.getPhoneDTO());
                     Customer customerEntity = mapper.toCustomerDTO(customertoUpdate);
                     return save(mapper.toCustomerDTO(customerEntity));
                 }).orElse(null);

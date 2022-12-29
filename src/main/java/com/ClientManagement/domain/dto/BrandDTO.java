@@ -2,34 +2,39 @@ package com.ClientManagement.domain.dto;
 
 public class BrandDTO {
 
-    private int idBrand;
-    private String brand;
+    private int idBrandDTO;
+    private String brandDTO;
 
-    public BrandDTO(String brand) {
-        this.brand = brand;
+    public BrandDTO(String brandDTO) {
+        this.brandDTO = brandDTO;
     }
 
-    public int getIdBrand() {
-        return idBrand;
+    public BrandDTO(int idBrandDTO, String brandDTO) {
+        this.idBrandDTO = idBrandDTO;
+        this.brandDTO = brandDTO;
     }
 
-    public void setIdBrand(int idBrand) {
-        this.idBrand = idBrand;
+    public int getIdBrandDTO() {
+        return idBrandDTO;
     }
 
-    public String getBrand() {
-        return brand;
+    public void setIdBrandDTO(int idBrandDTO) {
+        this.idBrandDTO = idBrandDTO;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public String getBrandDTO() {
+        return brandDTO;
+    }
+
+    public void setBrandDTO(String brandDTO) {
+        this.brandDTO = brandDTO;
     }
 
     @Override
     public String toString() {
         return "BrandDTO{" +
-                "idBrand=" + idBrand +
-                ", brand='" + brand + '\'' +
+                "idBrandDTO=" + idBrandDTO +
+                ", brandDTO='" + brandDTO + '\'' +
                 '}';
     }
 }

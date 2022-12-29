@@ -51,9 +51,9 @@ public class ClientPorfolioPersistenceRepository implements ClientPorfolioReposi
 
     @Override
     public ClientPorfolioDTO update(ClientPorfolioDTO clientPorfolio) {
-        return getClientPorfolio(clientPorfolio.getIdClientPorfolio())
+        return getClientPorfolio(clientPorfolio.getIdClientPorfolioDTO())
                 .map(clientPorfoliotoUpdate ->{
-                    clientPorfoliotoUpdate.setCustomer(clientPorfolio.getCustomer());
+                    clientPorfoliotoUpdate.setCustomerDTO(clientPorfolio.getCustomerDTO());
                     ClientPorfolio clientPorfo = mapper.toClientPorfolio(clientPorfoliotoUpdate);
                     return save(mapper.toClientPorfolioDTO(clientPorfo));
                 } ).orElse(null);

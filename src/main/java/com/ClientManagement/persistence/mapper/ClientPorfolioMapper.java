@@ -15,8 +15,8 @@ import java.util.List;
 public interface ClientPorfolioMapper {
 
     @Mappings({
-            @Mapping(source = "idClientPorfolio",target = "idClientPorfolio"),
-            @Mapping(source = "customer",target = "customer")
+            @Mapping(source = "idClientPorfolio",target = "idClientPorfolioDTO"),
+            @Mapping(source = "customer",target = "customerDTO")
     })
     ClientPorfolioDTO toClientPorfolioDTO(ClientPorfolio clientPorfolio);
 
