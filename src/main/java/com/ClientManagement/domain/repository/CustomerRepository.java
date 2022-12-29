@@ -1,18 +1,19 @@
 package com.ClientManagement.domain.repository;
 
 import com.ClientManagement.domain.Customer;
+import com.ClientManagement.domain.dto.CustomerDTO;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface CustomerRepository {
 
-    List<Customer> getAll();
-    Optional<List<Customer>> getByCustomer(int customerId);
-    Optional<Customer> getCustomer(int customerId);
-    Customer save (Customer customer);
+    List<CustomerDTO> getAll();
+    Optional<List<CustomerDTO>> getByCustomer(int customerId);
+    Optional<CustomerDTO> getCustomer(int customerId);
+    CustomerDTO save (CustomerDTO customer);
 
-    Customer update(Customer customer);
+    CustomerDTO update(CustomerDTO customer);
     void delete(int customerId);
 
 }

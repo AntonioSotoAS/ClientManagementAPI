@@ -1,6 +1,7 @@
 package com.ClientManagement.domain.service;
 
 import com.ClientManagement.domain.Role;
+import com.ClientManagement.domain.dto.RoleDTO;
 import com.ClientManagement.domain.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -12,19 +13,19 @@ public class RoleService {
     @Autowired
     RoleRepository roleRepository;
 
-    public List<Role> getAll(){
+    public List<RoleDTO> getAll(){
         return roleRepository.getAll();
     }
-    public Optional<List<Role>> getByRole(int roleId){
+    public Optional<List<RoleDTO>> getByRole(int roleId){
         return roleRepository.getByRole(roleId);
     }
-    public Optional<Role> getRole(int roleId){
+    public Optional<RoleDTO> getRole(int roleId){
         return roleRepository.getRole(roleId);
     }
-    public Role save (Role role){
+    public RoleDTO save (RoleDTO role){
         return roleRepository.save(role);
     }
-    public Role update(Role role){
+    public RoleDTO update(RoleDTO role){
         return roleRepository.update(role);
     }
     public boolean delete(int roleId){

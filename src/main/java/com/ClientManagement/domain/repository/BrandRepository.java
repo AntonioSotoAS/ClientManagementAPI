@@ -1,17 +1,19 @@
 package com.ClientManagement.domain.repository;
 
-import com.ClientManagement.domain.Brand;
+
+
+import com.ClientManagement.domain.dto.BrandDTO;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface BrandRepository {
 
-    List<Brand> getAll();
-    Optional<List<Brand>> getByBrand(int categoryId);
-    Optional<Brand> getBrand(int productId);
-    Brand save (Brand product);
-    Brand update(Brand product);
+    List<BrandDTO> getAll();
+    Optional<List<BrandDTO>> getByBrand(int brandId);
+    Optional<BrandDTO> getBrand(int brandId);
+    BrandDTO save (BrandDTO brand);
+    BrandDTO update(BrandDTO brand);
     void delete(int brandId);
 
 }

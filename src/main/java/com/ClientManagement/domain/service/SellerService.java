@@ -1,6 +1,7 @@
 package com.ClientManagement.domain.service;
 
-import com.ClientManagement.domain.Seller;
+
+import com.ClientManagement.domain.dto.SellerDTO;
 import com.ClientManagement.domain.repository.SellerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -12,20 +13,20 @@ public class SellerService {
     @Autowired
     SellerRepository sellerRepository;
 
-    public List<Seller> getAll(){
+    public List<SellerDTO> getAll(){
         return sellerRepository.getAll();
     }
-    public Optional<List<Seller>> getBySeller(int sellerId){
+    public Optional<List<SellerDTO>> getBySeller(int sellerId){
         return sellerRepository.getBySeller(sellerId);
     }
-    public Optional<Seller> getSeller(int sellerId){
+    public Optional<SellerDTO> getSeller(int sellerId){
         return sellerRepository.getSeller(sellerId);
     }
-    public Seller save (Seller seller){
+    public SellerDTO save (SellerDTO seller){
         return sellerRepository.save(seller);
     }
 
-    public Seller update(Seller seller){
+    public SellerDTO update(SellerDTO seller){
         return sellerRepository.update(seller);
     }
     public boolean delete(int sellerId){

@@ -1,6 +1,6 @@
 package com.ClientManagement.domain.service;
 
-import com.ClientManagement.domain.Brand;
+import com.ClientManagement.domain.dto.BrandDTO;
 import com.ClientManagement.domain.repository.BrandRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,19 +14,19 @@ public class BrandService {
     @Autowired
     private BrandRepository brandRepository;
 
-    public List<Brand> getAll(){
+    public List<BrandDTO> getAll(){
         return brandRepository.getAll();
     }
 
-    public Optional<Brand> getBrand(int brandId){
+    public Optional<BrandDTO> getBrand(int brandId){
         return brandRepository.getBrand(brandId);
     }
 
-    public Optional<List<Brand>> getByBrand(int brandId){
+    public Optional<List<BrandDTO>> getByBrand(int brandId){
         return brandRepository.getByBrand(brandId);
     }
 
-    public Brand save(Brand brand){
+    public BrandDTO save(BrandDTO brand){
         return brandRepository.save(brand);
     }
 
@@ -41,7 +41,7 @@ public class BrandService {
 
     }
 
-    public Brand update(Brand brand){
+    public BrandDTO update(BrandDTO brand){
         return brandRepository.update(brand);
     }
 

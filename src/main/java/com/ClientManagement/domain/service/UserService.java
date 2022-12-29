@@ -1,6 +1,7 @@
 package com.ClientManagement.domain.service;
 
-import com.ClientManagement.domain.User;
+
+import com.ClientManagement.domain.dto.UserDTO;
 import com.ClientManagement.domain.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -12,19 +13,19 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
 
-    public List<User> getAll(){
+    public List<UserDTO> getAll(){
         return userRepository.getAll();
     }
-    public Optional<List<User>> getByUser(int userId){
+    public Optional<List<UserDTO>> getByUser(int userId){
         return userRepository.getByUser(userId);
     }
-    public Optional<User> getUser(int userId){
+    public Optional<UserDTO> getUser(int userId){
         return userRepository.getUser(userId);
     }
-    public User save (User user){
+    public UserDTO save (UserDTO user){
         return userRepository.save(user);
     }
-    public User update(User user){
+    public UserDTO update(UserDTO user){
         return userRepository.update(user);
     }
     public boolean delete(int userId){
