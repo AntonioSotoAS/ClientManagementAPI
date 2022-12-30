@@ -1,6 +1,9 @@
 package com.ClientManagement.persistence.entity;
 
 import jakarta.persistence.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.sql.Blob;
 
 @Entity
 @Table(name = "customer")
@@ -21,11 +24,11 @@ public class Customer {
     @Column(name = "last_name")
     private String lastName;
 
+    private int age;
+
     private String phone;
 
     private String email;
-
-    private byte[] photo;
 
     public Integer getIdCustomer() {
         return idCustomer;
@@ -67,6 +70,14 @@ public class Customer {
         this.lastName = lastName;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     public String getPhone() {
         return phone;
     }
@@ -81,13 +92,5 @@ public class Customer {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public byte[] getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(byte[] photo) {
-        this.photo = photo;
     }
 }

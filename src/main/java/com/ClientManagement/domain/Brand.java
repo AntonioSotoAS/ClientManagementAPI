@@ -7,7 +7,8 @@ public class Brand {
     private int idBrand;
     private String brand;
 
-    public Brand(String brand) {
+    public Brand(int idBrand, String brand) {
+        this.idBrand = idBrand;
         this.brand = brand;
     }
 

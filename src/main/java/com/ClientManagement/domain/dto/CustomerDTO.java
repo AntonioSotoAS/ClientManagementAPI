@@ -1,6 +1,7 @@
 package com.ClientManagement.domain.dto;
 
 import com.ClientManagement.domain.Brand;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.Arrays;
 
@@ -14,9 +15,9 @@ public class CustomerDTO {
     private int ageDTO;
     private String phoneDTO;
     private String emailDTO;
-    private byte[] photoDTO;
 
-    public CustomerDTO(Brand brandDTO, int dniDTO, String nameDTO, String lastNameDTO, int ageDTO, String phoneDTO, String emailDTO, byte[] photoDTO) {
+    public CustomerDTO(int idCustomerDTO, Brand brandDTO, int dniDTO, String nameDTO, String lastNameDTO, int ageDTO, String phoneDTO, String emailDTO) {
+        this.idCustomerDTO = idCustomerDTO;
         this.brandDTO = brandDTO;
         this.dniDTO = dniDTO;
         this.nameDTO = nameDTO;
@@ -24,7 +25,6 @@ public class CustomerDTO {
         this.ageDTO = ageDTO;
         this.phoneDTO = phoneDTO;
         this.emailDTO = emailDTO;
-        this.photoDTO = photoDTO;
     }
 
     public int getIdCustomerDTO() {
@@ -91,14 +91,6 @@ public class CustomerDTO {
         this.emailDTO = emailDTO;
     }
 
-    public byte[] getPhotoDTO() {
-        return photoDTO;
-    }
-
-    public void setPhotoDTO(byte[] photoDTO) {
-        this.photoDTO = photoDTO;
-    }
-
     @Override
     public String toString() {
         return "CustomerDTO{" +
@@ -110,7 +102,6 @@ public class CustomerDTO {
                 ", ageDTO=" + ageDTO +
                 ", phoneDTO='" + phoneDTO + '\'' +
                 ", emailDTO='" + emailDTO + '\'' +
-                ", photoDTO=" + Arrays.toString(photoDTO) +
                 '}';
     }
 }

@@ -52,9 +52,9 @@ public class CustomerPersistenceRepository implements CustomerRepository {
                     customertoUpdate.setDniDTO(customer.getDniDTO());
                     customertoUpdate.setNameDTO(customer.getNameDTO());
                     customertoUpdate.setLastNameDTO(customer.getLastNameDTO());
-                    customertoUpdate.setPhoneDTO(customer.getPhoneDTO());
                     customertoUpdate.setEmailDTO(customer.getEmailDTO());
                     customertoUpdate.setPhoneDTO(customer.getPhoneDTO());
+                    customertoUpdate.setAgeDTO(customer.getAgeDTO());
                     Customer customerEntity = mapper.toCustomerDTO(customertoUpdate);
                     return save(mapper.toCustomerDTO(customerEntity));
                 }).orElse(null);

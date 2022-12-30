@@ -1,5 +1,7 @@
 package com.ClientManagement.domain;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import java.util.Arrays;
 
 public class Customer {
@@ -12,9 +14,9 @@ public class Customer {
     private int age;
     private String phone;
     private String email;
-    private byte[] photo;
 
-    public Customer(Brand brand, int dni, String name, String lastName, int age, String phone, String email, byte[] photo) {
+    public Customer(int idCustomer, Brand brand, int dni, String name, String lastName, int age, String phone, String email) {
+        this.idCustomer = idCustomer;
         this.brand = brand;
         this.dni = dni;
         this.name = name;
@@ -22,7 +24,6 @@ public class Customer {
         this.age = age;
         this.phone = phone;
         this.email = email;
-        this.photo = photo;
     }
 
     public int getIdCustomer() {
@@ -89,14 +90,6 @@ public class Customer {
         this.email = email;
     }
 
-    public byte[] getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(byte[] photo) {
-        this.photo = photo;
-    }
-
     @Override
     public String toString() {
         return "Customer{" +
@@ -108,7 +101,6 @@ public class Customer {
                 ", age=" + age +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
-                ", photo=" + Arrays.toString(photo) +
                 '}';
     }
 }

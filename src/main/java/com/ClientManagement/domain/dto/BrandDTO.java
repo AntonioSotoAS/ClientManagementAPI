@@ -5,12 +5,15 @@ public class BrandDTO {
     private int idBrandDTO;
     private String brandDTO;
 
-    public BrandDTO(String brandDTO) {
-        this.brandDTO = brandDTO;
+    public BrandDTO() {
     }
 
     public BrandDTO(int idBrandDTO, String brandDTO) {
         this.idBrandDTO = idBrandDTO;
+        this.brandDTO = brandDTO;
+    }
+
+    public BrandDTO(String brandDTO) {
         this.brandDTO = brandDTO;
     }
 
