@@ -17,15 +17,13 @@ public interface SellerMapper {
 
     @Mappings({
             @Mapping(source = "idSeller",target = "idSellerDTO"),
-            @Mapping(source = "clientPorfolio",target = "clientPorfolioDTO"),
             @Mapping(source = "dni",target = "dniDTO"),
             @Mapping(source = "name" ,target = "nameDTO"),
-            @Mapping(source = "lastName" ,target = "lastNameDTO"),
-            @Mapping(source = "photo" ,target = "photoDTO")
+            @Mapping(source = "lastName" ,target = "lastNameDTO")
     })
     SellerDTO toSellerDTO(Seller seller);
 
-    List<SellerDTO> toroleDTOs(List<Seller> roles);
+    List<SellerDTO> toSellerDTOs(List<Seller> roles);
 
     @InheritInverseConfiguration
     Seller toSeller(SellerDTO seller);

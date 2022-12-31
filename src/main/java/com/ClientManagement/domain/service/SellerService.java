@@ -4,10 +4,11 @@ package com.ClientManagement.domain.service;
 import com.ClientManagement.domain.dto.SellerDTO;
 import com.ClientManagement.domain.repository.SellerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class SellerService {
 
     @Autowired

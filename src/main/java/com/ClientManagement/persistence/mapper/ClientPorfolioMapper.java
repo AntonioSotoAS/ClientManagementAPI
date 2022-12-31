@@ -10,12 +10,13 @@ import org.mapstruct.Mappings;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-
+@Component
 @Mapper(componentModel = "spring",uses = {CustomerMapper.class})
 public interface ClientPorfolioMapper {
 
     @Mappings({
             @Mapping(source = "idClientPorfolio",target = "idClientPorfolioDTO"),
+            @Mapping(source = "seller",target = "sellerDTO"),
             @Mapping(source = "customer",target = "customerDTO")
     })
     ClientPorfolioDTO toClientPorfolioDTO(ClientPorfolio clientPorfolio);

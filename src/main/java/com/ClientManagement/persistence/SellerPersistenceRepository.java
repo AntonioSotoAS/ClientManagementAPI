@@ -22,13 +22,13 @@ public class SellerPersistenceRepository implements SellerRepository {
 
     @Override
     public List<SellerDTO> getAll() {
-        return mapper.toroleDTOs((List<Seller>) sellerCrudRepository.findAll());
+        return mapper.toSellerDTOs((List<Seller>) sellerCrudRepository.findAll());
     }
 
     @Override
     public Optional<List<SellerDTO>> getBySeller(int sellerId) {
         return sellerCrudRepository.findAllByIdSeller(sellerId)
-                .map(sellers -> mapper.toroleDTOs(sellers));
+                .map(sellers -> mapper.toSellerDTOs(sellers));
     }
 
     @Override
@@ -48,11 +48,9 @@ public class SellerPersistenceRepository implements SellerRepository {
     public SellerDTO update(SellerDTO seller) {
         return getSeller(seller.getIdSellerDTO())
                 .map(sellertoUpdate -> {
-                    seller.setClientPorfolioDTO(seller.getClientPorfolioDTO());
-                    seller.setDniDTO(seller.getDniDTO());
-                    seller.setNameDTO(seller.getNameDTO());
-                    seller.setLastNameDTO(seller.getLastNameDTO());
-                    seller.setPhotoDTO(seller.getPhotoDTO());
+                    sellertoUpdate.setDniDTO(seller.getDniDTO());
+                    sellertoUpdate.setNameDTO(seller.getNameDTO());
+                    sellertoUpdate.setLastNameDTO(seller.getLastNameDTO());
                     Seller sellerEntity = mapper.toSeller(sellertoUpdate);
                     return save(mapper.toSellerDTO(sellerEntity));
                 } ).orElse(null);

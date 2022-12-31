@@ -10,6 +10,9 @@ public class ClientPorfolio {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_client_porfolio")
     private Integer idClientPorfolio;
+    @ManyToOne
+    @JoinColumn(name = "id_seller")
+    private Seller seller;
 
     @ManyToOne
     @JoinColumn(name = "id_customer")
@@ -21,6 +24,14 @@ public class ClientPorfolio {
 
     public void setIdClientPorfolio(Integer idClientPorfolio) {
         this.idClientPorfolio = idClientPorfolio;
+    }
+
+    public Seller getSeller() {
+        return seller;
+    }
+
+    public void setSeller(Seller seller) {
+        this.seller = seller;
     }
 
     public Customer getCustomer() {

@@ -5,11 +5,12 @@ import com.ClientManagement.domain.Role;
 public class UserDTO {
 
     private int idUserDTO;
-    private Role roleDTO;
+    private RoleDTO roleDTO;
     private String usernameDTO;
     private String passwordDTO;
 
-    public UserDTO(Role roleDTO, String usernameDTO, String passwordDTO) {
+    public UserDTO(int idUserDTO, RoleDTO roleDTO, String usernameDTO, String passwordDTO) {
+        this.idUserDTO = idUserDTO;
         this.roleDTO = roleDTO;
         this.usernameDTO = usernameDTO;
         this.passwordDTO = passwordDTO;
@@ -23,11 +24,11 @@ public class UserDTO {
         this.idUserDTO = idUserDTO;
     }
 
-    public Role getRoleDTO() {
+    public RoleDTO getRoleDTO() {
         return roleDTO;
     }
 
-    public void setRoleDTO(Role roleDTO) {
+    public void setRoleDTO(RoleDTO roleDTO) {
         this.roleDTO = roleDTO;
     }
 

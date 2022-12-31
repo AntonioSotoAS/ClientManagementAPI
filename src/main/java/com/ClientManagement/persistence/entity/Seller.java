@@ -11,16 +11,12 @@ public class Seller {
     @Column(name = "id_seller")
     private Integer idSeller;
 
-    @OneToOne
-    @JoinColumn(name = "id_client_profolio")
-    private ClientPorfolio clientPorfolio;
-
     private Integer dni;
 
     private String name;
     @Column(name = "last_name")
     private String lastName;
-    private byte[] photo;
+
 
     public Integer getIdSeller() {
         return idSeller;
@@ -28,14 +24,6 @@ public class Seller {
 
     public void setIdSeller(Integer idSeller) {
         this.idSeller = idSeller;
-    }
-
-    public ClientPorfolio getClientPorfolio() {
-        return clientPorfolio;
-    }
-
-    public void setClientPorfolio(ClientPorfolio clientPorfolio) {
-        this.clientPorfolio = clientPorfolio;
     }
 
     public Integer getDni() {
@@ -62,11 +50,4 @@ public class Seller {
         this.lastName = lastName;
     }
 
-    public byte[] getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(byte[] photo) {
-        this.photo = photo;
-    }
 }

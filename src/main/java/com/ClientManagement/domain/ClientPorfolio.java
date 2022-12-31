@@ -3,9 +3,12 @@ package com.ClientManagement.domain;
 public class ClientPorfolio {
 
     private int idClientPorfolio;
+    private Seller seller;
     private Customer customer;
 
-    public ClientPorfolio(Customer customer) {
+    public ClientPorfolio(int idClientPorfolio, Seller seller, Customer customer) {
+        this.idClientPorfolio = idClientPorfolio;
+        this.seller = seller;
         this.customer = customer;
     }
 
@@ -15,6 +18,14 @@ public class ClientPorfolio {
 
     public void setIdClientPorfolio(int idClientPorfolio) {
         this.idClientPorfolio = idClientPorfolio;
+    }
+
+    public Seller getSeller() {
+        return seller;
+    }
+
+    public void setSeller(Seller seller) {
+        this.seller = seller;
     }
 
     public Customer getCustomer() {
@@ -29,6 +40,7 @@ public class ClientPorfolio {
     public String toString() {
         return "ClientPorfolio{" +
                 "idClientPorfolio=" + idClientPorfolio +
+                ", seller=" + seller +
                 ", customer=" + customer +
                 '}';
     }

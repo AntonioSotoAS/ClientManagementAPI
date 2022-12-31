@@ -5,19 +5,15 @@ import java.util.Arrays;
 public class Seller {
 
     private int idSeller;
-    private ClientPorfolio clientPorfolio;
-
     private int dni;
     private String name;
     private String lastName;
-    private byte[] photo;
 
-    public Seller(ClientPorfolio clientPorfolio, int dni, String name, String lastName, byte[] photo) {
-        this.clientPorfolio = clientPorfolio;
+    public Seller(int idSeller, int dni, String name, String lastName) {
+        this.idSeller = idSeller;
         this.dni = dni;
         this.name = name;
         this.lastName = lastName;
-        this.photo = photo;
     }
 
     public int getIdSeller() {
@@ -26,14 +22,6 @@ public class Seller {
 
     public void setIdSeller(int idSeller) {
         this.idSeller = idSeller;
-    }
-
-    public ClientPorfolio getClientPorfolio() {
-        return clientPorfolio;
-    }
-
-    public void setClientPorfolio(ClientPorfolio clientPorfolio) {
-        this.clientPorfolio = clientPorfolio;
     }
 
     public int getDni() {
@@ -60,23 +48,13 @@ public class Seller {
         this.lastName = lastName;
     }
 
-    public byte[] getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(byte[] photo) {
-        this.photo = photo;
-    }
-
     @Override
     public String toString() {
         return "Seller{" +
                 "idSeller=" + idSeller +
-                ", clientPorfolio=" + clientPorfolio +
                 ", dni=" + dni +
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", photo=" + Arrays.toString(photo) +
                 '}';
     }
 }

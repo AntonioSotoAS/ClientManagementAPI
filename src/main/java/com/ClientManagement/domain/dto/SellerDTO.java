@@ -7,19 +7,15 @@ import java.util.Arrays;
 public class SellerDTO {
 
     private int idSellerDTO;
-    private ClientPorfolio clientPorfolioDTO;
-
     private int dniDTO;
     private String nameDTO;
     private String lastNameDTO;
-    private byte[] photoDTO;
 
-    public SellerDTO(ClientPorfolio clientPorfolioDTO, int dniDTO, String nameDTO, String lastNameDTO, byte[] photoDTO) {
-        this.clientPorfolioDTO = clientPorfolioDTO;
+
+    public SellerDTO(int dniDTO, String nameDTO, String lastNameDTO) {
         this.dniDTO = dniDTO;
         this.nameDTO = nameDTO;
         this.lastNameDTO = lastNameDTO;
-        this.photoDTO = photoDTO;
     }
 
     public int getIdSellerDTO() {
@@ -28,14 +24,6 @@ public class SellerDTO {
 
     public void setIdSellerDTO(int idSellerDTO) {
         this.idSellerDTO = idSellerDTO;
-    }
-
-    public ClientPorfolio getClientPorfolioDTO() {
-        return clientPorfolioDTO;
-    }
-
-    public void setClientPorfolioDTO(ClientPorfolio clientPorfolioDTO) {
-        this.clientPorfolioDTO = clientPorfolioDTO;
     }
 
     public int getDniDTO() {
@@ -62,23 +50,13 @@ public class SellerDTO {
         this.lastNameDTO = lastNameDTO;
     }
 
-    public byte[] getPhotoDTO() {
-        return photoDTO;
-    }
-
-    public void setPhotoDTO(byte[] photoDTO) {
-        this.photoDTO = photoDTO;
-    }
-
     @Override
     public String toString() {
         return "SellerDTO{" +
                 "idSellerDTO=" + idSellerDTO +
-                ", clientPorfolioDTO=" + clientPorfolioDTO +
                 ", dniDTO=" + dniDTO +
                 ", nameDTO='" + nameDTO + '\'' +
                 ", lastNameDTO='" + lastNameDTO + '\'' +
-                ", photoDTO=" + Arrays.toString(photoDTO) +
                 '}';
     }
 }
