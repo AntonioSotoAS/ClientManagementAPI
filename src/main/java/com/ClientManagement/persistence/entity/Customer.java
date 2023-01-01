@@ -1,9 +1,6 @@
 package com.ClientManagement.persistence.entity;
 
-import jakarta.persistence.*;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.sql.Blob;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "customer")

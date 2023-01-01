@@ -1,6 +1,6 @@
 package com.ClientManagement.persistence.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "user")
@@ -14,6 +14,10 @@ public class User {
     @OneToOne
     @JoinColumn(name = "id_role")
     private Role role;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_seller_user")
+    private Seller sellerUser;
 
     private String username;
     private String password;
@@ -32,6 +36,14 @@ public class User {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public Seller getSellerUser() {
+        return sellerUser;
+    }
+
+    public void setSellerUser(Seller sellerUser) {
+        this.sellerUser = sellerUser;
     }
 
     public String getUsername() {

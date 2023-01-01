@@ -10,12 +10,13 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 @Component
-@Mapper(componentModel = "spring",uses = {RoleMapper.class})
+@Mapper(componentModel = "spring",uses = {RoleMapper.class,SellerMapper.class})
 public interface UserMapper {
 
     @Mappings({
             @Mapping(source = "idUser",target = "idUserDTO"),
             @Mapping(source = "role",target = "roleDTO"),
+            @Mapping(source = "sellerUser",target = "sellerUserDTO"),
             @Mapping(source = "username",target = "usernameDTO"),
             @Mapping(source = "password" ,target = "passwordDTO")
 

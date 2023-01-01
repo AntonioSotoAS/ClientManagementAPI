@@ -6,12 +6,14 @@ public class UserDTO {
 
     private int idUserDTO;
     private RoleDTO roleDTO;
+    private SellerDTO sellerUserDTO;
     private String usernameDTO;
     private String passwordDTO;
 
-    public UserDTO(int idUserDTO, RoleDTO roleDTO, String usernameDTO, String passwordDTO) {
+    public UserDTO(int idUserDTO, RoleDTO roleDTO, SellerDTO sellerUserDTO, String usernameDTO, String passwordDTO) {
         this.idUserDTO = idUserDTO;
         this.roleDTO = roleDTO;
+        this.sellerUserDTO = sellerUserDTO;
         this.usernameDTO = usernameDTO;
         this.passwordDTO = passwordDTO;
     }
@@ -30,6 +32,14 @@ public class UserDTO {
 
     public void setRoleDTO(RoleDTO roleDTO) {
         this.roleDTO = roleDTO;
+    }
+
+    public SellerDTO getSellerUserDTO() {
+        return sellerUserDTO;
+    }
+
+    public void setSellerUserDTO(SellerDTO sellerUserDTO) {
+        this.sellerUserDTO = sellerUserDTO;
     }
 
     public String getUsernameDTO() {
@@ -53,6 +63,7 @@ public class UserDTO {
         return "UserDTO{" +
                 "idUserDTO=" + idUserDTO +
                 ", roleDTO=" + roleDTO +
+                ", sellerUserDTO=" + sellerUserDTO +
                 ", usernameDTO='" + usernameDTO + '\'' +
                 ", passwordDTO='" + passwordDTO + '\'' +
                 '}';

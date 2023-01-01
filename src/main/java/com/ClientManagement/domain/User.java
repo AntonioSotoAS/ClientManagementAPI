@@ -4,11 +4,14 @@ public class User {
 
     private int idUser;
     private Role role;
+    private Seller seller;
     private String username;
     private String password;
 
-    public User(Role role, String username, String password) {
+    public User(int idUser, Role role, Seller seller, String username, String password) {
+        this.idUser = idUser;
         this.role = role;
+        this.seller = seller;
         this.username = username;
         this.password = password;
     }
@@ -27,6 +30,14 @@ public class User {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public Seller getSeller() {
+        return seller;
+    }
+
+    public void setSeller(Seller seller) {
+        this.seller = seller;
     }
 
     public String getUsername() {
@@ -50,6 +61,7 @@ public class User {
         return "User{" +
                 "idUser=" + idUser +
                 ", role=" + role +
+                ", seller=" + seller +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 '}';

@@ -5,7 +5,8 @@ public class RoleDTO {
     private int idRoleDTO;
     private String roleTypeDTO;
 
-    public RoleDTO(String roleTypeDTO) {
+    public RoleDTO(int idRoleDTO, String roleTypeDTO) {
+        this.idRoleDTO = idRoleDTO;
         this.roleTypeDTO = roleTypeDTO;
     }
 

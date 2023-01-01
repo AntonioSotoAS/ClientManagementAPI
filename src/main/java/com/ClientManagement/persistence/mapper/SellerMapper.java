@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 @Component
-@Mapper(componentModel = "spring",uses = {ClientPorfolioMapper.class})
+@Mapper(componentModel = "spring")
 public interface SellerMapper {
 
     @Mappings({

@@ -1,6 +1,7 @@
 package com.ClientManagement.persistence.entity;
 
-import jakarta.persistence.*;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "role")
