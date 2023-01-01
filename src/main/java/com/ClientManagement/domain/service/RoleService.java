@@ -4,10 +4,11 @@ import com.ClientManagement.domain.Role;
 import com.ClientManagement.domain.dto.RoleDTO;
 import com.ClientManagement.domain.repository.RoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class RoleService {
 
     @Autowired
