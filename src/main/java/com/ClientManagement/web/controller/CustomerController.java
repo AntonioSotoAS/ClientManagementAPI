@@ -28,14 +28,6 @@ public class CustomerController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    //For now, this list is not necessary for the functionality of the api.
-    // Yes, as the project progresses, I don't use it, I better remove it.
-    @GetMapping("/customerId/{customerId}")
-    public ResponseEntity<List<CustomerDTO>> getByCategory(@PathVariable("customerId") int customerId){
-        return customerService.getByCustomer(customerId).map(customer -> new ResponseEntity<>(customer,HttpStatus.OK))
-                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
-    }
-
     @PostMapping("/save")
     public ResponseEntity<CustomerDTO> save(@RequestBody CustomerDTO customer){
 

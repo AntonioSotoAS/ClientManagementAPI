@@ -22,10 +22,6 @@ public class BrandService {
         return brandRepository.getBrand(brandId);
     }
 
-    public Optional<List<BrandDTO>> getByBrand(int brandId){
-        return brandRepository.getByBrand(brandId);
-    }
-
     public BrandDTO save(BrandDTO brand){
         return brandRepository.save(brand);
     }

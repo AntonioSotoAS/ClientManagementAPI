@@ -18,30 +18,24 @@ public class CustomerPersistenceRepository implements CustomerRepository {
     private CustomerCrudRepository customerCrudRepository;
 
     @Autowired
-    private CustomerMapper mapper;
+    private CustomerMapper customerMapper;
 
     @Override
     public List<CustomerDTO> getAll() {
-        return mapper.toCustomerDTOs((List<Customer>) customerCrudRepository.findAll());
-    }
-
-    @Override
-    public Optional<List<CustomerDTO>> getByCustomer(int customerId) {
-        return customerCrudRepository.findAllByIdCustomer(customerId)
-                .map(customers -> mapper.toCustomerDTOs(customers));
+        return customerMapper.toCustomerDTOs((List<Customer>) customerCrudRepository.findAll());
     }
 
     @Override
     public Optional<CustomerDTO> getCustomer(int customerId) {
         return customerCrudRepository.findById(customerId)
-                .map(customer -> mapper.toCustomerDTO(customer));
+                .map(customer -> customerMapper.toCustomerDTO(customer));
     }
 
     @Override
     public CustomerDTO save(CustomerDTO customer) {
-        Customer customerEntity = mapper.toCustomerDTO(customer);
+        Customer customerEntity = customerMapper.toCustomerDTO(customer);
 
-        return mapper.toCustomerDTO(customerCrudRepository.save(customerEntity));
+        return customerMapper.toCustomerDTO(customerCrudRepository.save(customerEntity));
     }
 
     @Override
@@ -55,8 +49,8 @@ public class CustomerPersistenceRepository implements CustomerRepository {
                     customertoUpdate.setEmailDTO(customer.getEmailDTO());
                     customertoUpdate.setPhoneDTO(customer.getPhoneDTO());
                     customertoUpdate.setAgeDTO(customer.getAgeDTO());
-                    Customer customerEntity = mapper.toCustomerDTO(customertoUpdate);
-                    return save(mapper.toCustomerDTO(customerEntity));
+                    Customer customerEntity = customerMapper.toCustomerDTO(customertoUpdate);
+                    return save(customerMapper.toCustomerDTO(customerEntity));
                 }).orElse(null);
     }
 

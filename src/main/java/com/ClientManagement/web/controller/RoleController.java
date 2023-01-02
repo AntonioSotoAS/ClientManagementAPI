@@ -28,14 +28,6 @@ public class RoleController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    //For now, this list is not necessary for the functionality of the api.
-    // Yes, as the project progresses, I don't use it, I better remove it.
-    @GetMapping("/userId/{userId}")
-    public ResponseEntity<List<RoleDTO>> getByUser(@PathVariable("userId") int roleId){
-        return roleService.getByRole(roleId).map(role -> new ResponseEntity<>(role,HttpStatus.OK))
-                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
-    }
-
     @PostMapping("/save")
     public ResponseEntity<RoleDTO> save(@RequestBody RoleDTO role){
 

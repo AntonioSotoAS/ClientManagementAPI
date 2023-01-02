@@ -18,30 +18,25 @@ public class SellerPersistenceRepository implements SellerRepository {
     private SellerCrudRepository sellerCrudRepository;
 
     @Autowired
-    private SellerMapper mapper;
+    private SellerMapper sellerMapper;
 
     @Override
     public List<SellerDTO> getAll() {
-        return mapper.toSellerDTOs((List<Seller>) sellerCrudRepository.findAll());
+        return sellerMapper.toSellerDTOs((List<Seller>) sellerCrudRepository.findAll());
     }
 
-    @Override
-    public Optional<List<SellerDTO>> getBySeller(int sellerId) {
-        return sellerCrudRepository.findAllByIdSeller(sellerId)
-                .map(sellers -> mapper.toSellerDTOs(sellers));
-    }
 
     @Override
     public Optional<SellerDTO> getSeller(int sellerId) {
         return sellerCrudRepository.findById(sellerId)
-                .map(seller -> mapper.toSellerDTO(seller));
+                .map(seller -> sellerMapper.toSellerDTO(seller));
     }
 
     @Override
     public SellerDTO save(SellerDTO seller) {
-        Seller sellerEntity = mapper.toSeller(seller);
+        Seller sellerEntity = sellerMapper.toSeller(seller);
 
-        return mapper.toSellerDTO(sellerCrudRepository.save(sellerEntity));
+        return sellerMapper.toSellerDTO(sellerCrudRepository.save(sellerEntity));
     }
 
     @Override
@@ -51,8 +46,8 @@ public class SellerPersistenceRepository implements SellerRepository {
                     sellertoUpdate.setDniDTO(seller.getDniDTO());
                     sellertoUpdate.setNameDTO(seller.getNameDTO());
                     sellertoUpdate.setLastNameDTO(seller.getLastNameDTO());
-                    Seller sellerEntity = mapper.toSeller(sellertoUpdate);
-                    return save(mapper.toSellerDTO(sellerEntity));
+                    Seller sellerEntity = sellerMapper.toSeller(sellertoUpdate);
+                    return save(sellerMapper.toSellerDTO(sellerEntity));
                 } ).orElse(null);
     }
 

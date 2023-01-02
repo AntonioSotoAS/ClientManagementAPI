@@ -28,14 +28,6 @@ public class UserController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    //For now, this list is not necessary for the functionality of the api.
-    // Yes, as the project progresses, I don't use it, I better remove it.
-    @GetMapping("/userId/{userId}")
-    public ResponseEntity<List<UserDTO>> getByUser(@PathVariable("userId") int userId){
-        return userService.getByUser(userId).map(user -> new ResponseEntity<>(user,HttpStatus.OK))
-                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
-    }
-
     @PostMapping("/save")
     public ResponseEntity<UserDTO> save(@RequestBody UserDTO user){
 

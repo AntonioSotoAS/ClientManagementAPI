@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 @Component
-@Mapper(componentModel = "spring",uses = {CustomerMapper.class})
+@Mapper(componentModel = "spring",uses = {CustomerMapper.class,SellerMapper.class})
 public interface ClientPorfolioMapper {
 
     @Mappings({

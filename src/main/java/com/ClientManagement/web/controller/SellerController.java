@@ -28,14 +28,6 @@ public class SellerController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    //For now, this list is not necessary for the functionality of the api.
-    // Yes, as the project progresses, I don't use it, I better remove it.
-    @GetMapping("/sellerId/{sellerId}")
-    public ResponseEntity<List<SellerDTO>> getBySeller(@PathVariable("sellerId") int sellerId){
-        return sellerService.getBySeller(sellerId).map(seller -> new ResponseEntity<>(seller,HttpStatus.OK))
-                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
-    }
-
     @PostMapping("/save")
     public ResponseEntity<SellerDTO> save(@RequestBody SellerDTO seller){
 

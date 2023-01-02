@@ -17,9 +17,6 @@ public class SellerService {
     public List<SellerDTO> getAll(){
         return sellerRepository.getAll();
     }
-    public Optional<List<SellerDTO>> getBySeller(int sellerId){
-        return sellerRepository.getBySeller(sellerId);
-    }
     public Optional<SellerDTO> getSeller(int sellerId){
         return sellerRepository.getSeller(sellerId);
     }

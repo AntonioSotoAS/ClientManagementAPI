@@ -10,7 +10,6 @@ import java.util.Optional;
 public interface RoleRepository {
 
     List<RoleDTO> getAll();
-    Optional<List<RoleDTO>> getByRole(int roleId);
     Optional<RoleDTO> getRole(int roleId);
     RoleDTO save (RoleDTO role);
     RoleDTO update(RoleDTO role);

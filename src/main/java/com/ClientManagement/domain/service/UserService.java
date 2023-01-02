@@ -17,9 +17,6 @@ public class UserService {
     public List<UserDTO> getAll(){
         return userRepository.getAll();
     }
-    public Optional<List<UserDTO>> getByUser(int userId){
-        return userRepository.getByUser(userId);
-    }
     public Optional<UserDTO> getUser(int userId){
         return userRepository.getUser(userId);
     }

@@ -18,30 +18,25 @@ public class RolePersistenceRepository implements RoleRepository {
     private RoleCrudRepository roleCrudRepository;
 
     @Autowired
-    private RoleMapper mapper;
+    private RoleMapper roleMapper;
 
     @Override
     public List<RoleDTO> getAll() {
-        return mapper.toRoleDTOs((List<Role>) roleCrudRepository.findAll());
+        return roleMapper.toRoleDTOs((List<Role>) roleCrudRepository.findAll());
     }
 
-    @Override
-    public Optional<List<RoleDTO>> getByRole(int roleId) {
-        return roleCrudRepository.findAllByIdRole(roleId)
-                .map(roles -> mapper.toRoleDTOs(roles));
-    }
 
     @Override
     public Optional<RoleDTO> getRole(int roleId) {
         return roleCrudRepository.findById(roleId)
-                .map(role -> mapper.toRoleDTO(role));
+                .map(role -> roleMapper.toRoleDTO(role));
     }
 
     @Override
     public RoleDTO save(RoleDTO role) {
-        Role roleEntity = mapper.toRole(role);
+        Role roleEntity = roleMapper.toRole(role);
 
-        return mapper.toRoleDTO(roleCrudRepository.save(roleEntity));
+        return roleMapper.toRoleDTO(roleCrudRepository.save(roleEntity));
     }
 
     @Override
@@ -49,8 +44,8 @@ public class RolePersistenceRepository implements RoleRepository {
         return getRole(role.getIdRoleDTO())
                 .map(roletoUpdate -> {
                     roletoUpdate.setRoleTypeDTO(role.getRoleTypeDTO());
-                    Role roleEntity = mapper.toRole(roletoUpdate);
-                    return save(mapper.toRoleDTO(roleEntity));
+                    Role roleEntity = roleMapper.toRole(roletoUpdate);
+                    return save(roleMapper.toRoleDTO(roleEntity));
                 }).orElse(null);
     }
 

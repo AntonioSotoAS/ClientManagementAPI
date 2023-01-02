@@ -17,9 +17,6 @@ public class RoleService {
     public List<RoleDTO> getAll(){
         return roleRepository.getAll();
     }
-    public Optional<List<RoleDTO>> getByRole(int roleId){
-        return roleRepository.getByRole(roleId);
-    }
     public Optional<RoleDTO> getRole(int roleId){
         return roleRepository.getRole(roleId);
     }

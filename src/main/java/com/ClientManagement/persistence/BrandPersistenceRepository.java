@@ -18,29 +18,23 @@ public class BrandPersistenceRepository implements BrandRepository {
     private BrandCrudRepository brandCrudRepository;
 
     @Autowired
-    private BrandMapper mapper;
+    private BrandMapper brandMapper;
 
     @Override
     public List<BrandDTO> getAll() {
-        return mapper.toBrandDTOs((List<Brand>) brandCrudRepository.findAll());
-    }
-
-    @Override
-    public Optional<List<BrandDTO>> getByBrand(int brandId) {
-        return brandCrudRepository.findByIdBrand(brandId)
-                .map(brands -> mapper.toBrandDTOs(brands));
+        return brandMapper.toBrandDTOs((List<Brand>) brandCrudRepository.findAll());
     }
 
     @Override
     public Optional<BrandDTO> getBrand(int brandId) {
         return brandCrudRepository.findById(brandId)
-                .map(brand -> mapper.toBrandDTO(brand));
+                .map(brand -> brandMapper.toBrandDTO(brand));
     }
 
     @Override
     public BrandDTO save(BrandDTO brand) {
-        Brand brandEntity = mapper.toBrand(brand);
-        return mapper.toBrandDTO(brandCrudRepository.save(brandEntity));
+        Brand brandEntity = brandMapper.toBrand(brand);
+        return brandMapper.toBrandDTO(brandCrudRepository.save(brandEntity));
     }
 
     @Override
@@ -48,8 +42,8 @@ public class BrandPersistenceRepository implements BrandRepository {
         return getBrand(brand.getIdBrandDTO())
                 .map(brandtoUpdate -> {
                     brandtoUpdate.setBrandDTO(brand.getBrandDTO());
-                    Brand branEntity = mapper.toBrand(brandtoUpdate);
-                    return save(mapper.toBrandDTO(branEntity));
+                    Brand branEntity = brandMapper.toBrand(brandtoUpdate);
+                    return save(brandMapper.toBrandDTO(branEntity));
                 }).orElse(null);
     }
 

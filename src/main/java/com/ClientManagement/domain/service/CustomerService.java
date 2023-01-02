@@ -17,9 +17,6 @@ public class CustomerService {
     public List<CustomerDTO> getAll(){
         return customerRepository.getAll();
     }
-    public Optional<List<CustomerDTO>> getByCustomer(int customerId){
-        return customerRepository.getByCustomer(customerId);
-    }
     public Optional<CustomerDTO> getCustomer(int customerId){
         return customerRepository.getCustomer(customerId);
     }

@@ -18,8 +18,8 @@ public class ClientPorfolioService {
     public List<ClientPorfolioDTO> getAll(){
         return clientPorfolioRepository.getAll();
     }
-    public Optional<List<ClientPorfolioDTO>> getByClientPorfolio(int clientPorfolioId){
-        return clientPorfolioRepository.getByClientPorfolio(clientPorfolioId);
+    public Optional<List<ClientPorfolioDTO>> getBySellerId(int clientPorfolioId){
+        return clientPorfolioRepository.getBySellerId(clientPorfolioId);
     }
     public Optional<ClientPorfolioDTO> getClientPorfolio(int clientPorfolioId){
         return clientPorfolioRepository.getClientPorfolio(clientPorfolioId);

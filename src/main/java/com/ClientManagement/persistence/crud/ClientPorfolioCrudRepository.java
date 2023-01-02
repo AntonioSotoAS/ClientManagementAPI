@@ -10,5 +10,5 @@ import java.util.Optional;
 public interface ClientPorfolioCrudRepository extends CrudRepository<ClientPorfolio,Integer> {
 
     Optional<List<ClientPorfolio>> findAllByIdClientPorfolio(int idClient);
-
+    Optional<List<ClientPorfolio>> findBySeller_IdSeller(int sellerId);
 }

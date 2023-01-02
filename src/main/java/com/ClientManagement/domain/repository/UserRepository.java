@@ -10,7 +10,6 @@ import java.util.Optional;
 public interface UserRepository {
 
     List<UserDTO> getAll();
-    Optional<List<UserDTO>> getByUser(int userId);
     Optional<UserDTO> getUser(int userId);
     UserDTO save (UserDTO user);
     UserDTO update(UserDTO user);

@@ -10,7 +10,6 @@ import java.util.Optional;
 public interface SellerRepository {
 
     List<SellerDTO> getAll();
-    Optional<List<SellerDTO>> getBySeller(int sellerId);
     Optional<SellerDTO> getSeller(int sellerId);
     SellerDTO save (SellerDTO seller);
 

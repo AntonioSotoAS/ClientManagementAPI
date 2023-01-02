@@ -18,29 +18,24 @@ public class UserPersistenceRepository implements UserRepository {
     private UserCrudRepository userCrudRepository;
 
     @Autowired
-    private UserMapper mapper;
+    private UserMapper userMapper;
 
     @Override
     public List<UserDTO> getAll() {
-        return mapper.toUserDTOs((List<User>) userCrudRepository.findAll());
+        return userMapper.toUserDTOs((List<User>) userCrudRepository.findAll());
     }
 
-    @Override
-    public Optional<List<UserDTO>> getByUser(int userId) {
-        return userCrudRepository.findAllByIdUser(userId)
-                .map(users -> mapper.toUserDTOs(users));
-    }
 
     @Override
     public Optional<UserDTO> getUser(int userId) {
         return userCrudRepository.findById(userId)
-                .map(user -> mapper.toUserDTO(user));
+                .map(user -> userMapper.toUserDTO(user));
     }
 
     @Override
     public UserDTO save(UserDTO user) {
-        User userEntity = mapper.toUser(user);
-        return mapper.toUserDTO(userCrudRepository.save(userEntity));
+        User userEntity = userMapper.toUser(user);
+        return userMapper.toUserDTO(userCrudRepository.save(userEntity));
     }
 
     @Override
@@ -51,8 +46,8 @@ public class UserPersistenceRepository implements UserRepository {
                     usertoUpdate.setSellerUserDTO(user.getSellerUserDTO());
                     usertoUpdate.setUsernameDTO(user.getUsernameDTO());
                     usertoUpdate.setPasswordDTO(user.getPasswordDTO());
-                    User userEntity = mapper.toUser(usertoUpdate);
-                    return save(mapper.toUserDTO(userEntity));
+                    User userEntity = userMapper.toUser(usertoUpdate);
+                    return save(userMapper.toUserDTO(userEntity));
                 }).orElse(null);
     }
 

@@ -26,13 +26,6 @@ public class BrandController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    //For now, this list is not necessary for the functionality of the api.
-    // Yes, as the project progresses, I don't use it, I better remove it.
-    @GetMapping("/brandId/{brandId}")
-    public ResponseEntity<List<BrandDTO>> getByCategory(@PathVariable("brandId") int brandId){
-        return brandService.getByBrand(brandId).map(brand -> new ResponseEntity<>(brand,HttpStatus.OK))
-                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
-    }
 
     @PostMapping("/save")
     public ResponseEntity<BrandDTO> save(@RequestBody BrandDTO brand){
