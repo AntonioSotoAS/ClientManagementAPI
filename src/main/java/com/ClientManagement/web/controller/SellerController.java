@@ -3,6 +3,10 @@ package com.ClientManagement.web.controller;
 
 import com.ClientManagement.domain.dto.SellerDTO;
 import com.ClientManagement.domain.service.SellerService;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,17 +22,25 @@ public class SellerController {
     private  SellerService sellerService;
 
     @GetMapping("/all")
+    @ApiOperation("Get All Sellers")
     public ResponseEntity<List<SellerDTO>> getAll(){
         return new ResponseEntity<>(sellerService.getAll(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<SellerDTO> getSeller(@PathVariable("id") int sellerId){
+    @ApiOperation("Search a Seller with an ID")
+    @ApiResponses({
+            @ApiResponse(code = 200,message = "OK"),
+            @ApiResponse(code = 404,message = "Seller not found")
+    })
+    public ResponseEntity<SellerDTO> getSeller(@ApiParam(value = "The id of the Seller"
+            ,required = true,example = "2")@PathVariable("id") int sellerId){
         return sellerService.getSeller(sellerId).map(seller -> new ResponseEntity<>(seller,HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @PostMapping("/save")
+    @ApiOperation("Save brand")
     public ResponseEntity<SellerDTO> save(@RequestBody SellerDTO seller){
 
         return new ResponseEntity<>(sellerService.save(seller),HttpStatus.CREATED);
@@ -36,6 +48,7 @@ public class SellerController {
 
 
     @DeleteMapping("/delete/{id}")
+    @ApiOperation("Delete brand")
     public ResponseEntity delete(@PathVariable("id") int sellerId){
 
         if (sellerService.delete(sellerId)){
@@ -47,6 +60,7 @@ public class SellerController {
 
 
     @PutMapping("/update")
+    @ApiOperation("Update brand")
     public SellerDTO update(@RequestBody SellerDTO seller){
         return sellerService.update(seller);
     }
