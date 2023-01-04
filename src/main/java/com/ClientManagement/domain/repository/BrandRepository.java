@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Optional;
 @Repository
 public interface BrandRepository {
-
     List<BrandDTO> getAll();
     Optional<BrandDTO> getBrand(int brandId);
     BrandDTO save (BrandDTO brand);
