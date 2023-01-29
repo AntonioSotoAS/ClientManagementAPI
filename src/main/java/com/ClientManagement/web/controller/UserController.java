@@ -32,6 +32,7 @@ public class UserController {
     @ApiResponses({
             @ApiResponse(code = 200,message = "OK"),
             @ApiResponse(code = 404,message = "User not found")
+
     })
     public ResponseEntity<UserDTO> getUser(@ApiParam(value = "The id of the User"
             ,required = true,example = "2")@PathVariable("id") int userId){
